@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="signinContainer" maxHeight="768.0" maxWidth="341.0" minHeight="768.0" minWidth="341.0" prefHeight="768.0" prefWidth="341.0" style="-fx-background-color: #cccccc; -fx-border-color: #cc4b00;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldengine.controller.SigninController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="155.0" layoutX="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/LogoPack/logo_transparent.png" />
+         </image>
+      </ImageView>
+      <JFXTextField id="textUsername" fx:id="textUsernameSignin" focusColor="#cc4b00" layoutX="40.0" layoutY="280.0" maxHeight="25.0" maxWidth="250.0" minHeight="25.0" minWidth="250.0" prefHeight="25.0" prefWidth="250.0" promptText="Username..." />
+      <JFXPasswordField id="textPassword" fx:id="textPasswordSignin" focusColor="#cc4b00" layoutX="40.0" layoutY="360.0" maxHeight="25.0" maxWidth="250.0" minHeight="25.0" minWidth="250.0" prefHeight="25.0" prefWidth="250.0" promptText="Password..." />
+      <JFXButton id="btnSignIn" fx:id="btnSignIn" buttonType="RAISED" layoutX="110.0" layoutY="450.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" onAction="#signIn" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #cc4b00; -fx-background-radius: 5em;" text="SIGN IN">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label alignment="CENTER" layoutX="125.0" layoutY="170.0" prefHeight="59.0" prefWidth="100.0" text="Sign in" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Hyperlink fx:id="linkPasswordReset" layoutX="25.0" layoutY="566.0" onMouseClicked="#switchToReset" text="Forgot your password?">
+         <font>
+            <Font size="15.0" />
+         </font></Hyperlink>
+      <Hyperlink id="linkNewUser" fx:id="linkSignup" layoutX="25.0" layoutY="601.0" onMouseClicked="#switchToSignup" prefHeight="47.0" prefWidth="135.0" text="New user?">
+         <font>
+            <Font size="15.0" />
+         </font></Hyperlink>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="730.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/icons/facebook.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="65.0" layoutY="730.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/icons/instagram.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="120.0" layoutY="730.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/icons/youtube.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

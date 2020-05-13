@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parentContainer" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldengine.controller.MainController">
+   <children>
+      <AnchorPane fx:id="templateContainer" layoutX="-1.0" layoutY="-1.0" maxHeight="767.0" maxWidth="341.0" minHeight="768.0" minWidth="341.0" prefHeight="768.0" prefWidth="341.0" style="-fx-background-color: #ededeb;" />
+      <AnchorPane layoutX="339.0" maxHeight="768.0" maxWidth="686.0" minHeight="768.0" minWidth="686.0" prefHeight="768.0" prefWidth="686.0">
+         <children>
+            <ImageView fx:id="imgView" fitHeight="768.0" fitWidth="686.0" pickOnBounds="true">
+               <image>
+                  <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/StartingScreen/StartingScreen1.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnPrevious" layoutX="15.0" layoutY="360.0" onAction="#previousImage" style="-fx-background-color: #cc4b00; -fx-background-radius: 5em;" text="&lt;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnNext" layoutX="630.0" layoutY="360.0" onAction="#nextImage" style="-fx-background-color: #cc4b00; -fx-background-radius: 5em;" text="&gt;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

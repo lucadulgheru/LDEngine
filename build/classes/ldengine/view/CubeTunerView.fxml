@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="700.0" maxWidth="250.0" minHeight="700.0" minWidth="250.0" prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldengine.controller.CubeTunerController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/box.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtPosX" focusColor="#cc4b00" layoutX="100.0" layoutY="160.0" prefHeight="25.0" prefWidth="65.0" promptText="X position" />
+      <JFXTextField fx:id="txtPosZ" focusColor="#cc4b00" layoutX="100.0" layoutY="220.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Position" />
+      <JFXTextField fx:id="txtPosY" focusColor="#cc4b00" layoutX="100.0" layoutY="190.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Position" />
+      <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="27.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/position.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="25.0" layoutY="200.0" prefHeight="15.0" prefWidth="65.0" text="Position" />
+      <JFXTextField fx:id="txtRotX" focusColor="#cc4b00" layoutX="100.0" layoutY="280.0" prefHeight="25.0" prefWidth="65.0" promptText="X Rotation" />
+      <JFXTextField fx:id="txtRotZ" focusColor="#cc4b00" layoutX="100.0" layoutY="340.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Rotation" />
+      <JFXTextField fx:id="txtRotY" focusColor="#cc4b00" layoutX="100.0" layoutY="310.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Rotation" />
+      <Label layoutX="25.0" layoutY="320.0" prefHeight="17.0" prefWidth="65.0" text="Rotation" />
+      <JFXTextField fx:id="txtScaleX" focusColor="#cc4b00" layoutX="100.0" layoutY="400.0" prefHeight="25.0" prefWidth="65.0" promptText="X Scale" />
+      <JFXTextField fx:id="txtScaleZ" focusColor="#cc4b00" layoutX="100.0" layoutY="460.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Scale" />
+      <JFXTextField fx:id="txtScaleY" focusColor="#cc4b00" layoutX="100.0" layoutY="430.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Scale" />
+      <Label layoutX="25.0" layoutY="440.0" prefHeight="25.0" prefWidth="48.0" text="Scale" />
+      <Label layoutX="25.0" layoutY="530.0" prefHeight="17.0" prefWidth="65.0" text="Color" />
+      <JFXButton fx:id="btnInsert" buttonType="RAISED" layoutX="180.0" layoutY="650.0" onAction="#insertCube" style="-fx-background-color: #02b51a; -fx-background-radius: 5em;" text="✅" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="25.0" layoutY="600.0" text="Shape ID" />
+      <JFXTextField fx:id="txtShapeId" focusColor="#cc4b00" layoutX="100.0" layoutY="590.0" prefHeight="25.0" prefWidth="120.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXTextField>
+      <ImageView fitHeight="62.0" fitWidth="56.0" layoutX="22.0" layoutY="334.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/rotation.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="17.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/scale.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="colorBlack" fitHeight="45.0" fitWidth="45.0" layoutX="90.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/color_black.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="colorBlue" fitHeight="45.0" fitWidth="45.0" layoutX="130.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/color_blue.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="colorGreen" fitHeight="45.0" fitWidth="45.0" layoutX="170.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/color_green.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="colorOrange" fitHeight="45.0" fitWidth="45.0" layoutX="90.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/color_orange.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="colorRed" fitHeight="45.0" fitWidth="45.0" layoutX="130.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/color_red.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="colorYellow" fitHeight="45.0" fitWidth="45.0" layoutX="170.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Documents/NetBeansProjects/LDEngine/src/img/color_yellow.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXButton fx:id="btnResetDefault" buttonType="RAISED" layoutX="25.0" layoutY="650.0" onAction="#resetDefault" style="-fx-background-color: #916e0c; -fx-background-radius: 5em;" text="🔙" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

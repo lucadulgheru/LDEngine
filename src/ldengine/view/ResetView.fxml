@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="resetContainer" maxHeight="768.0" maxWidth="341.0" minHeight="768.0" minWidth="341.0" prefHeight="768.0" prefWidth="341.0" style="-fx-background-color: #cccccc; -fx-border-color: #cc4b00;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldengine.controller.ResetController">
+   <children>
+      <JFXButton fx:id="btnReset" buttonType="RAISED" layoutX="180.0" layoutY="610.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #cc4b00; -fx-background-radius: 5em;" text="RESET">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="105.0" layoutY="170.0" prefHeight="59.0" prefWidth="150.0" text="Reset password" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="730.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/icons/facebook.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="65.0" layoutY="730.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/icons/instagram.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="120.0" layoutY="730.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/icons/youtube.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="155.0" layoutX="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Luca/Desktop/ProjetMTDL/img/LogoPack/logo_transparent.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnCancel" buttonType="RAISED" layoutX="40.0" layoutY="610.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" onAction="#switchToSignin" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5em;" text="CANCEL">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="textEmail" focusColor="#cc4b00" layoutX="40.0" layoutY="360.0" maxHeight="25.0" maxWidth="250.0" minHeight="25.0" minWidth="250.0" prefHeight="25.0" prefWidth="250.0" promptText="E-mail..." />
+      <Label layoutX="23.0" layoutY="446.0" text="A message will be sent to your e-mail address shortly!" wrapText="true" />
+      <Label layoutX="28.0" layoutY="492.0" prefHeight="17.0" prefWidth="285.0" text="From there you will be able to reset your password!" wrapText="true" />
+      <JFXTextField fx:id="textUsername" focusColor="#cc4b00" layoutX="40.0" layoutY="280.0" maxHeight="25.0" maxWidth="250.0" minHeight="25.0" minWidth="250.0" prefHeight="25.0" prefWidth="250.0" promptText="Username..." />
+   </children>
+</AnchorPane>

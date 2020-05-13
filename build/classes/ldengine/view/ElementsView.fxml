@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="elementsTab" maxHeight="700.0" maxWidth="250.0" minHeight="700.0" minWidth="250.0" prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldengine.controller.ElementsController">
+   <children>
+      <JFXListView fx:id="listContainer" maxHeight="570.0" maxWidth="250.0" minHeight="469.0" minWidth="250.0" prefHeight="567.0" prefWidth="250.0" style="-fx-background-color: #cccccc;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXListView>
+      <JFXButton fx:id="btnDeleteItem" buttonType="RAISED" layoutX="196.0" layoutY="622.0" onAction="#removeItem" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 5em; -fx-background-color: #db1d0f;" text="❌" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton fx:id="btnRefreshList" buttonType="RAISED" layoutX="14.0" layoutY="622.0" onAction="#refreshList" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 5em; -fx-background-color: #0a73c4;" text="🔄" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXToggleButton fx:id="toggleId" layoutX="64.0" layoutY="613.0" onAction="#toggleId" prefHeight="55.0" prefWidth="122.0" text="ID only" toggleColor="#00a116" toggleLineColor="#09941c">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXToggleButton>
+   </children>
+</AnchorPane>

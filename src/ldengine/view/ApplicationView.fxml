@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+
+<FlowPane fx:id="applicationTab" maxHeight="768.0" maxWidth="1366.0" minHeight="768.0" minWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldengine.controller.ApplicationController">
+   <children>
+      <MenuBar maxWidth="1366.0" minWidth="1366.0" prefWidth="1366.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="User preferences" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Insert">
+               <items>
+                  <Menu mnemonicParsing="false" text="Shapes">
+                    <items>
+                      <MenuItem fx:id="menuSphere" mnemonicParsing="false" onAction="#generateSphere" text="Sphere" />
+                        <MenuItem fx:id="menuCylinder" mnemonicParsing="false" onAction="#generateCylinder" text="Cylinder" />
+                        <MenuItem fx:id="menuBox" mnemonicParsing="false" onAction="#generateBox" text="Box" />
+                        <MenuItem fx:id="menuCustom" mnemonicParsing="false" onAction="#generateCustom" text="Custom" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Lights">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="AmbientLight" />
+                        <MenuItem mnemonicParsing="false" text="PointLight" />
+                    </items>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="User">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Change password" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar maxHeight="43.0" maxWidth="1366.0" minHeight="43.0" minWidth="1366.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="1366.0" style="-fx-background-color: #cccccc;">
+         <items>
+            <JFXRadioButton fx:id="radioKeyboard" onAction="#toggleKeyboard" text="Enable keyboard movement" />
+            <JFXRadioButton fx:id="radioMouse" onAction="#toggleMouse" text="Enable mouse movement" />
+         </items>
+      </ToolBar>
+      <fx:include fx:id="elementsTab" source="ElementsView.fxml" />
+      <Pane fx:id="scenePane" maxHeight="700.0" maxWidth="866.0" minHeight="700.0" minWidth="866.0" prefHeight="700.0" prefWidth="866.0" />
+      <fx:include fx:id="tunerTab" source="TunerView.fxml" />
+   </children>
+</FlowPane>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<Accordion fx:id="tunerTab" maxHeight="700.0" maxWidth="250.0" minHeight="700.0" minWidth="250.0" prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldengine.controller.TunerController">
+  <panes>
+    <TitledPane fx:id="boxPane" animated="false" prefWidth="250.0" style="-fx-background-color: #cccccc;" text="Box">
+         <content>
+            <AnchorPane maxHeight="700.0" maxWidth="250.0" prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #cccccc;">
+               <children>
+                  <ImageView fitHeight="105.0" fitWidth="115.0" layoutX="79.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/box.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="boxPosX" focusColor="#cc4b00" layoutX="108.0" layoutY="105.0" prefHeight="25.0" prefWidth="65.0" promptText="X position" />
+                  <JFXTextField fx:id="boxPosZ" focusColor="#cc4b00" layoutX="108.0" layoutY="165.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Position" />
+                  <JFXTextField fx:id="boxPosY" focusColor="#cc4b00" layoutX="108.0" layoutY="135.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Position" />
+                  <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="35.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/position.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="33.0" layoutY="109.0" prefHeight="15.0" prefWidth="65.0" text="Position" />
+                  <JFXTextField fx:id="boxRotX" focusColor="#cc4b00" layoutX="109.0" layoutY="212.0" prefHeight="25.0" prefWidth="65.0" promptText="X Rotation" />
+                  <JFXTextField fx:id="boxRotZ" focusColor="#cc4b00" layoutX="109.0" layoutY="272.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Rotation" />
+                  <JFXTextField fx:id="boxRotY" focusColor="#cc4b00" layoutX="109.0" layoutY="242.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Rotation" />
+                  <Label layoutX="37.0" layoutY="216.0" prefHeight="17.0" prefWidth="65.0" text="Rotation" />
+                  <JFXTextField fx:id="boxScaleX" focusColor="#cc4b00" layoutX="110.0" layoutY="331.0" prefHeight="25.0" prefWidth="65.0" promptText="X Scale" />
+                  <JFXTextField fx:id="boxScaleZ" focusColor="#cc4b00" layoutX="110.0" layoutY="391.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Scale" />
+                  <JFXTextField fx:id="boxScaleY" focusColor="#cc4b00" layoutX="110.0" layoutY="361.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Scale" />
+                  <Label layoutX="38.0" layoutY="331.0" prefHeight="25.0" prefWidth="48.0" text="Scale" />
+                  <Label layoutX="33.0" layoutY="445.0" prefHeight="17.0" prefWidth="65.0" text="Color" />
+                  <Label layoutX="30.0" layoutY="531.0" text="Box ID" />
+                  <JFXTextField fx:id="boxId" focusColor="#cc4b00" layoutX="98.0" layoutY="516.0" prefHeight="25.0" prefWidth="120.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXTextField>
+                  <ImageView fitHeight="62.0" fitWidth="56.0" layoutX="34.0" layoutY="224.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../img/rotation.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="50.0" layoutX="33.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/scale.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="boxColorBlack" fitHeight="45.0" fitWidth="45.0" layoutX="94.0" layoutY="431.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../../img/color_black.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="boxColorBlue" fitHeight="45.0" fitWidth="45.0" layoutX="134.0" layoutY="431.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_blue.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="boxColorGreen" fitHeight="45.0" fitWidth="45.0" layoutX="174.0" layoutY="431.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_green.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="boxColorOrange" fitHeight="45.0" fitWidth="45.0" layoutX="94.0" layoutY="471.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_orange.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="boxColorRed" fitHeight="45.0" fitWidth="45.0" layoutX="134.0" layoutY="471.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_red.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="boxColorYellow" fitHeight="45.0" fitWidth="45.0" layoutX="174.0" layoutY="471.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_yellow.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <JFXButton fx:id="boxEdit" buttonType="RAISED" layoutX="197.0" layoutY="554.0" onAction="#editBox" style="-fx-background-color: #02b51a; -fx-background-radius: 5em;" text="✅" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXToggleButton fx:id="boxTogglePos" layoutX="23.0" layoutY="149.0" prefHeight="36.0" prefWidth="64.0" text="Enable" textFill="#cccccc" toggleColor="#cc4b00" toggleLineColor="#e17d44" />
+                  <JFXToggleButton fx:id="boxToggleRot" layoutX="23.0" layoutY="256.0" prefHeight="48.0" prefWidth="47.0" text="Enable" textFill="#cccccc" toggleColor="#cc4b00" toggleLineColor="#e17d44" />
+                  <JFXToggleButton fx:id="boxToggleScale" layoutX="23.0" layoutY="375.0" prefHeight="48.0" prefWidth="47.0" text="Enable" textFill="#cccccc" toggleColor="#cc4b00" toggleLineColor="#e17d44" />
+               </children>
+            </AnchorPane>
+         </content>
+    </TitledPane>
+    <TitledPane fx:id="spherePane" animated="false" text="Sphere">
+         <content>
+            <AnchorPane style="-fx-background-color: #cccccc;">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="108.0" layoutX="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/sphere.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="spherePosX" focusColor="#cc4b00" layoutX="112.0" layoutY="100.0" prefHeight="25.0" prefWidth="65.0" promptText="X position" />
+                  <JFXTextField fx:id="spherePosZ" focusColor="#cc4b00" layoutX="112.0" layoutY="160.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Position" />
+                  <JFXTextField fx:id="spherePosY" focusColor="#cc4b00" layoutX="112.0" layoutY="130.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Position" />
+                  <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="39.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/position.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="140.0" prefHeight="15.0" prefWidth="65.0" text="Position" />
+                  <JFXTextField fx:id="sphereRotX" focusColor="#cc4b00" layoutX="109.0" layoutY="210.0" prefHeight="25.0" prefWidth="65.0" promptText="X Rotation" />
+                  <JFXTextField fx:id="sphereRotZ" focusColor="#cc4b00" layoutX="109.0" layoutY="270.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Rotation" />
+                  <JFXTextField fx:id="sphereRotY" focusColor="#cc4b00" layoutX="109.0" layoutY="240.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Rotation" />
+                  <Label layoutX="34.0" layoutY="235.0" prefHeight="17.0" prefWidth="65.0" text="Rotation" />
+                  <JFXTextField fx:id="sphereRadius" focusColor="#cc4b00" layoutX="111.0" layoutY="332.0" prefHeight="25.0" prefWidth="65.0" promptText="Radius" />
+                  <Label layoutX="36.0" layoutY="319.0" prefHeight="25.0" prefWidth="48.0" text="Scale" />
+                  <Label layoutX="30.0" layoutY="429.0" prefHeight="17.0" prefWidth="65.0" text="Color" />
+                  <Label layoutX="33.0" layoutY="507.0" text="Sphere ID" />
+                  <JFXTextField fx:id="sphereId" focusColor="#cc4b00" layoutX="98.0" layoutY="495.0" prefHeight="25.0" prefWidth="120.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXTextField>
+                  <ImageView fitHeight="62.0" fitWidth="56.0" layoutX="31.0" layoutY="249.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../img/rotation.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="28.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/scale.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="sphereColorBlack" fitHeight="45.0" fitWidth="45.0" layoutX="95.0" layoutY="399.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../../img/color_black.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="sphereColorBlue" fitHeight="45.0" fitWidth="45.0" layoutX="135.0" layoutY="399.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_blue.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="sphereColorGreen" fitHeight="45.0" fitWidth="45.0" layoutX="175.0" layoutY="399.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_green.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="sphereColorOrange" fitHeight="45.0" fitWidth="45.0" layoutX="95.0" layoutY="439.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_orange.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="sphereColorRed" fitHeight="45.0" fitWidth="45.0" layoutX="135.0" layoutY="439.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_red.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="sphereColorYellow" fitHeight="45.0" fitWidth="45.0" layoutX="175.0" layoutY="439.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_yellow.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <JFXButton fx:id="sphereEdit" buttonType="RAISED" layoutX="190.0" layoutY="541.0" onAction="#editSphere" style="-fx-background-color: #02b51a; -fx-background-radius: 5em;" text="✅" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </content>
+    </TitledPane>
+    <TitledPane fx:id="cylPane" animated="false" text="Cylinder">
+         <content>
+            <AnchorPane style="-fx-background-color: #cccccc;">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="118.0" layoutX="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/cylinder.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="cylPosX" focusColor="#cc4b00" layoutX="112.0" layoutY="100.0" prefHeight="25.0" prefWidth="65.0" promptText="X position" />
+                  <JFXTextField fx:id="cylPosZ" focusColor="#cc4b00" layoutX="112.0" layoutY="160.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Position" />
+                  <JFXTextField fx:id="cylPosY" focusColor="#cc4b00" layoutX="112.0" layoutY="130.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Position" />
+                  <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="39.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/position.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="130.0" prefHeight="15.0" prefWidth="65.0" text="Position" />
+                  <JFXTextField fx:id="cylRotX" focusColor="#cc4b00" layoutX="109.0" layoutY="199.0" prefHeight="25.0" prefWidth="65.0" promptText="X Rotation" />
+                  <JFXTextField fx:id="cylRotZ" focusColor="#cc4b00" layoutX="109.0" layoutY="259.0" prefHeight="25.0" prefWidth="65.0" promptText="Z Rotation" />
+                  <JFXTextField fx:id="cylRotY" focusColor="#cc4b00" layoutX="109.0" layoutY="229.0" prefHeight="25.0" prefWidth="65.0" promptText="Y Rotation" />
+                  <Label layoutX="34.0" layoutY="224.0" prefHeight="17.0" prefWidth="65.0" text="Rotation" />
+                  <JFXTextField fx:id="cylRadius" focusColor="#cc4b00" layoutX="111.0" layoutY="313.0" prefHeight="25.0" prefWidth="65.0" promptText="Radius" />
+                  <Label layoutX="36.0" layoutY="313.0" prefHeight="25.0" prefWidth="48.0" text="Scale" />
+                  <Label layoutX="30.0" layoutY="426.0" prefHeight="17.0" prefWidth="65.0" text="Color" />
+                  <Label layoutX="33.0" layoutY="508.0" text="Cylinder ID" />
+                  <JFXTextField fx:id="cylId" focusColor="#cc4b00" layoutX="98.0" layoutY="496.0" prefHeight="25.0" prefWidth="120.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXTextField>
+                  <ImageView fitHeight="62.0" fitWidth="56.0" layoutX="31.0" layoutY="238.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../img/rotation.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="28.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/scale.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cylColorBlack" fitHeight="45.0" fitWidth="45.0" layoutX="95.0" layoutY="396.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../../img/color_black.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cylColorBlue" fitHeight="45.0" fitWidth="45.0" layoutX="135.0" layoutY="396.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_blue.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="cylColorGreen" fitHeight="45.0" fitWidth="45.0" layoutX="175.0" layoutY="396.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_green.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="cylColorOrange" fitHeight="45.0" fitWidth="45.0" layoutX="95.0" layoutY="436.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_orange.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="cylColorRed" fitHeight="45.0" fitWidth="45.0" layoutX="135.0" layoutY="436.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_red.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="cylColorYellow" fitHeight="45.0" fitWidth="45.0" layoutX="175.0" layoutY="436.0" onMousePressed="#toggleColor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/color_yellow.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <JFXButton fx:id="cylEdit" buttonType="RAISED" layoutX="179.0" layoutY="539.0" onAction="#editCylinder" prefHeight="38.0" prefWidth="41.0" style="-fx-background-color: #02b51a; -fx-background-radius: 5em;" text="✅" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="cylHeight" focusColor="#cc4b00" layoutX="111.0" layoutY="345.0" prefHeight="25.0" prefWidth="65.0" promptText="Height" />
+               </children>
+            </AnchorPane>
+         </content>
+    </TitledPane>
+      <TitledPane fx:id="customPane" animated="false" prefHeight="700.0" prefWidth="250.0" text="Custom">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </TitledPane>
+  </panes>
+</Accordion>
