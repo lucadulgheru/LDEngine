@@ -67,10 +67,13 @@ public class SignupController implements Initializable {
     private void registerUser() throws SQLException{
         
 
+        if(conn.insertUser(textUsernameSignup.getText(), textPasswordSignup.getText(), textEmailSignup.getText()))
         
-        conn.insertUser(textUsernameSignup.getText(), textPasswordSignup.getText(), textEmailSignup.getText());
-        
-        sm.showAlert("Account registered successfully!", "INFORMATION");
+            sm.showAlert("Account registered successfully!", "INFORMATION");
+            
+         else 
+            
+            sm.showAlert("Account failed to register!", "WARNING");
         
     }
     
@@ -80,7 +83,7 @@ public class SignupController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         
         try {
-            conn = new DBConnection();
+            conn = DBConnection.getInstance();
         } catch (SQLException ex) {
             Logger.getLogger(SignupController.class.getName()).log(Level.SEVERE, null, ex);
         }

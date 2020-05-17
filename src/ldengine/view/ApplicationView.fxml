@@ -39,15 +39,15 @@
                   </Menu>
                   <Menu mnemonicParsing="false" text="Lights">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="AmbientLight" />
-                        <MenuItem mnemonicParsing="false" text="PointLight" />
+                      <MenuItem fx:id="menuAmbient" mnemonicParsing="false" onAction="#generateAmbientLight" text="AmbientLight" />
+                        <MenuItem fx:id="menuPoint" mnemonicParsing="false" onAction="#generatePointLight" text="PointLight" />
                     </items>
                   </Menu>
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="User">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Change password" />
+                  <MenuItem mnemonicParsing="false" onAction="#changePassword" text="Change password" />
                </items>
             </Menu>
         </menus>

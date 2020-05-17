@@ -54,12 +54,14 @@ public class SigninController implements Initializable {
     
     private DBConnection conn;
     
+    public boolean signStatus = false;
+    
     private SigninModel sm = new SigninModel();
     
     
     @FXML
     
-    private void switchToSignup() throws IOException{
+    public void switchToSignup() throws IOException{
            
         sm.swapScene("/ldengine/view/SignupView.fxml", signinContainer, signinContainer);
         
@@ -68,7 +70,7 @@ public class SigninController implements Initializable {
     
     
     @FXML 
-    private void switchToReset() throws IOException{
+    public void switchToReset() throws IOException{
         
        sm.swapScene("/ldengine/view/ResetView.fxml", signinContainer, signinContainer);
         
@@ -76,11 +78,13 @@ public class SigninController implements Initializable {
     
     
     @FXML
-    private void signIn(ActionEvent event) throws IOException, SQLException{
+    public void signIn() throws IOException, SQLException{
         
-        
+      
         
         if(conn.validateUser(textUsernameSignin.getText(), textPasswordSignin.getText())){
+            
+            signStatus = true;
 
             sm.signIn(signinContainer);
      
@@ -101,7 +105,7 @@ public class SigninController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
        
         try {
-            conn = new DBConnection();
+            conn = DBConnection.getInstance();
         } catch (SQLException ex) {
             Logger.getLogger(SigninController.class.getName()).log(Level.SEVERE, null, ex);
         }

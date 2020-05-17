@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.LightBase;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.DrawMode;
@@ -18,6 +19,7 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Sphere;
 import ldengine.sceneobjects.FocusedObject;
+import ldengine.sceneobjects.LightPool;
 import ldengine.sceneobjects.ShapePool;
 
 /**
@@ -30,6 +32,8 @@ public class ElementsController {
     @FXML
     private JFXListView listContainer;
     @FXML
+    private JFXListView listLights;
+    @FXML
     private JFXButton btnDeleteItem;
     @FXML
     private JFXButton btnRefreshList;
@@ -38,6 +42,7 @@ public class ElementsController {
     
     
     ShapePool shapePool = ShapePool.getInstance();
+    LightPool lightPool = LightPool.getInstance();
     
     FocusedObject focusedObject = FocusedObject.getInstance();
 
@@ -67,6 +72,7 @@ public class ElementsController {
     private void refreshList(ActionEvent event) {
         
         listContainer.refresh();
+        listLights.refresh();
         
     }
 
@@ -97,6 +103,7 @@ public class ElementsController {
     public void initialize() {
                
         listContainer.setItems(shapePool.pool);
+        listLights.setItems(lightPool.pool);
         
         
         listContainer.setCellFactory(param -> new ListCell<Shape3D>() {
@@ -112,9 +119,24 @@ public class ElementsController {
         }
     });
         
+        
+        listLights.setCellFactory(param -> new ListCell<LightBase>() {
+        @Override
+        protected void updateItem(LightBase item, boolean empty) {
+            super.updateItem(item, empty);
+
+            if (empty || item == null || item.toString() == null) {
+                setText(null);
+            } else {
+                setText(item.toString());
+            }
+        }
+    });
+        
+        
  
         
-     // daca dai click pe tabel si niciun obiect nu e focusat => exceptie
+    
         
         listContainer.setOnMouseClicked(e->{
             

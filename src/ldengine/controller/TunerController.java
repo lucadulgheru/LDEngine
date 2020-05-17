@@ -8,6 +8,7 @@ package ldengine.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
+import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Accordion;
@@ -17,6 +18,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Sphere;
+import ldengine.data.DBConnection;
+import ldengine.data.LoggedUser;
 import ldengine.sceneobjects.BoxDecorator;
 import ldengine.sceneobjects.ColorType;
 import ldengine.sceneobjects.CylinderDecorator;
@@ -147,6 +150,9 @@ public class TunerController {
     
     private ApplicationController applicationController;
     
+    private DBConnection conn;
+    private LoggedUser loggedUser;
+    
     private final FocusedObject focusedObject = FocusedObject.getInstance();
     
     private final BoxDecorator boxDecorator = new BoxDecorator(); 
@@ -156,7 +162,7 @@ public class TunerController {
     private ColorType color;
 
     @FXML
-    private void editBox(ActionEvent event) {
+    private void editBox(ActionEvent event) throws SQLException {
         
       //double px, py, pz;
       //double rx, ry, rz;
@@ -172,12 +178,16 @@ public class TunerController {
       boxDecorator.applyColor(color);
       
       boxDecorator.applyId(boxId.getText());
+      
+      conn.insertShape(3, "ID="+boxId.getText()+" | POSITION ["+boxPosX.getText()+","+boxPosY.getText()+","+boxPosZ.getText()+"] | COLOR = " + color.toString() +" | SIZE ["+boxScaleX.getText()+","+boxScaleY.getText()+","+boxScaleZ.getText()+"]");
+        
+      System.out.println("User '" + loggedUser.username + "' edited box: ID="+boxId.getText()+" | POSITION ["+boxPosX.getText()+","+boxPosY.getText()+","+boxPosZ.getText()+"] | COLOR = " + color.toString() +" | SIZE ["+boxScaleX.getText()+","+boxScaleY.getText()+","+boxScaleZ.getText()+"]");
  
         
     }
 
     @FXML
-    private void editSphere(ActionEvent event) {
+    private void editSphere(ActionEvent event) throws SQLException {
         
       sphereDecorator.setSphere((Sphere)focusedObject.shape);
           
@@ -188,12 +198,16 @@ public class TunerController {
       sphereDecorator.applyColor(color);
       
       sphereDecorator.applyId(sphereId.getText());
+      
+      conn.insertShape(1, "ID="+sphereId.getText()+" | POSITION ["+spherePosX.getText()+","+spherePosY.getText()+","+spherePosZ.getText()+"] | COLOR = " + color.toString() +" | SIZE ["+sphereRadius.getText()+"]");
+        
+      System.out.println("User '" + loggedUser.username + "' edited sphere: ID="+sphereId.getText()+" | POSITION ["+spherePosX.getText()+","+spherePosY.getText()+","+spherePosZ.getText()+"] | COLOR = " + color.toString() +" | SIZE ["+sphereRadius.getText()+"]");
         
         
     }
 
     @FXML
-    private void editCylinder(ActionEvent event) {
+    private void editCylinder(ActionEvent event) throws SQLException {
         
         
       cylinderDecorator.setCylinder((Cylinder)focusedObject.shape);
@@ -205,6 +219,10 @@ public class TunerController {
       cylinderDecorator.applyColor(color);
         
       cylinderDecorator.applyId(cylId.getText());
+      
+      conn.insertShape(2, "ID="+cylId.getText()+" | POSITION ["+cylPosX.getText()+","+cylPosY.getText()+","+cylPosZ.getText()+"] | COLOR = " + color.toString() +" | SIZE ["+cylHeight.getText()+","+cylRadius.getText()+"]");
+        
+      System.out.println("User '" + loggedUser.username + "' edited cylinder: ID="+cylId.getText()+" | POSITION ["+cylPosX.getText()+","+cylPosY.getText()+","+cylPosZ.getText()+"] | COLOR = " + color.toString() +" | SIZE ["+cylHeight.getText()+","+cylRadius.getText()+"]");
         
     }
     
@@ -308,9 +326,10 @@ public class TunerController {
     }
        
        
-       public void initialize(){
+       public void initialize() throws SQLException{
            
-           
+           conn = DBConnection.getInstance();
+           loggedUser = LoggedUser.getInstance();
            
            
            
